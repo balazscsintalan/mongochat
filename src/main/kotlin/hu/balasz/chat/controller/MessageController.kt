@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 
 @RestController
+@CrossOrigin
 @RequestMapping("/messages")
 class MessageController(val messageService: MessageService) {
 

@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 class MessageService(val messageRepository: MessageRepository) {
     fun findWithTailableCursorByRoom(room: String): Flux<MessageView> {
         return this.messageRepository.findWithTailableCursorByRoom(room)
-                .map { MessageView(it.text, it.user, it.creationDate) }
+                .map { MessageView(it.id!!, it.text, it.user, it.creationDate) }
     }
 
     fun newMessage(messageBody: MessageBody) {
